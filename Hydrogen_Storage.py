@@ -101,20 +101,22 @@ def Hydrogen_Storage_System(NH2_ele, NH2_HV, P_H2_ele, T_H2_ele):
     output = Mode.H2
     return output
 
-# Example
-filepath_mac = '/Users/jeonseungchan/OneDrive/OneDrive - 한양대학교/3. Codes/1. DataSet/5. KETI_Example_Data'
-filepath = 'C:/Users/jsc95/OneDrive - 한양대학교/3. Codes/1. DataSet/3. 2021_KIEE_Data'
-filename = ['Hydrogen','Vehicle','P_operate','T_operate']
-filepath = filepath_mac # MAC 사용 시 ON
 
-df_Hydrogen = pd.read_csv(os.path.join(filepath, "%s.csv" %filename[0]))
-df_Vehicle = pd.read_csv(os.path.join(filepath, "%s.csv" %filename[1]))
-df_P = pd.read_csv(os.path.join(filepath, "%s.csv" %filename[2]))
-df_T = pd.read_csv(os.path.join(filepath, "%s.csv" %filename[3]))
+if __name__=="__main__" : 
+    # Example
+    filepath_mac = '/Users/jeonseungchan/OneDrive/OneDrive - 한양대학교/3. Codes/1. DataSet/5. KETI_Example_Data'
+    filepath = 'C:/Users/jsc95/OneDrive - 한양대학교/3. Codes/1. DataSet/3. 2021_KIEE_Data'
+    filename = ['Hydrogen','Vehicle','P_operate','T_operate']
+    filepath = filepath_mac # MAC 사용 시 ON
 
-Hydrogen = df_Hydrogen.values
-Vehicle = df_Vehicle.values
-P = df_P.values
-T = df_T.values
+    df_Hydrogen = pd.read_csv(os.path.join(filepath, "%s.csv" %filename[0]))
+    df_Vehicle = pd.read_csv(os.path.join(filepath, "%s.csv" %filename[1]))
+    df_P = pd.read_csv(os.path.join(filepath, "%s.csv" %filename[2]))
+    df_T = pd.read_csv(os.path.join(filepath, "%s.csv" %filename[3]))
 
-H2 = Hydrogen_Storage_System(Hydrogen,Vehicle,P,T)
+    Hydrogen = df_Hydrogen.values
+    Vehicle = df_Vehicle.values
+    P = df_P.values
+    T = df_T.values
+
+    H2 = Hydrogen_Storage_System(Hydrogen,Vehicle,P,T)

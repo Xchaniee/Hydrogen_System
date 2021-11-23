@@ -235,20 +235,21 @@ def WED(V,I,P,T,state = 'on'):
         output = 0
     return output
 
-# Example
-filepath_mac = '/Users/jeonseungchan/OneDrive/OneDrive - 한양대학교/3. Codes/1. DataSet/5. KETI_Example_Data'
-filepath = 'C:/Users/jsc95/OneDrive - 한양대학교/3. Codes/1. DataSet/3. 2021_KIEE_Data'
-filename = ['V_operate','I_operate','P_operate','T_operate']
-filepath = filepath_mac # MAC 사용 시 ON
+if __name__=="__main__" : 
+    # Example
+    filepath_mac = '/Users/jeonseungchan/OneDrive/OneDrive - 한양대학교/3. Codes/1. DataSet/5. KETI_Example_Data'
+    filepath = 'C:/Users/jsc95/OneDrive - 한양대학교/3. Codes/1. DataSet/3. 2021_KIEE_Data'
+    filename = ['V_operate','I_operate','P_operate','T_operate']
+    filepath = filepath_mac # MAC 사용 시 ON
 
-df_V = pd.read_csv(os.path.join(filepath, "%s.csv" %filename[0]))
-df_I = pd.read_csv(os.path.join(filepath, "%s.csv" %filename[1]))
-df_P = pd.read_csv(os.path.join(filepath, "%s.csv" %filename[2]))
-df_T = pd.read_csv(os.path.join(filepath, "%s.csv" %filename[3]))
+    df_V = pd.read_csv(os.path.join(filepath, "%s.csv" %filename[0]))
+    df_I = pd.read_csv(os.path.join(filepath, "%s.csv" %filename[1]))
+    df_P = pd.read_csv(os.path.join(filepath, "%s.csv" %filename[2]))
+    df_T = pd.read_csv(os.path.join(filepath, "%s.csv" %filename[3]))
 
-V = df_V.values
-I = df_I.values
-P = df_P.values
-T = df_T.values
+    V = df_V.values
+    I = df_I.values
+    P = df_P.values
+    T = df_T.values
 
-Hydrogen = WED(V,I,P,T,state='on')
+    Hydrogen = WED(V,I,P,T,state='on')
